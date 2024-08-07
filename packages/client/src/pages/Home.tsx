@@ -33,9 +33,9 @@ function Home() {
     setShowClearBtn(false);
   };
 
-  const hotels = results.filter((result) => result.type === 'hotel');
-  const cities = results.filter((result) => result.type === 'city');
-  const countries = results.filter((result) => result.type === 'country');
+  const hotels: AutocompleteResult[] = results.filter((result) => result.type === 'hotel');
+  const cities: AutocompleteResult[] = results.filter((result) => result.type === 'city');
+  const countries: AutocompleteResult[] = results.filter((result) => result.type === 'country');
 
   return (
     <div className="App">
