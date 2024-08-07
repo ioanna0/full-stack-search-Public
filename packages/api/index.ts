@@ -53,7 +53,7 @@ app.get('/autocomplete', async (req, res) => {
     const countries: Country[] = await countriesCollection.find().toArray();
     const q = (req.query.q as string).toLowerCase();
     const results = [
-      ...hotels.filter(hotel => hotel.hotel_name.toLowerCase().includes(q)).map(hotel => ({ type: 'hotel', name: hotel.hotel_name })),
+      ...hotels.filter(hotel => hotel.hotel_name.toLowerCase().includes(q) || hotel.country.toLowerCase().includes(q)).map(hotel => ({ type: 'hotel', name: hotel.hotel_name })),
       ...cities.filter(city => city.name.toLowerCase().includes(q)).map(city => ({ type: 'city', name: city.name })),
       ...countries.filter(country => country.country.toLowerCase().includes(q)).map(country => ({ type: 'country', name: country.country })),
     ];
