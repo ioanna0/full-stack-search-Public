@@ -82,9 +82,28 @@ When clicking on one of the `Hotels`, `Cities` or `Countries` links, the applica
 
 ### Write-up
 
-<!-- Write-up/conclusion section -->
+## Observations and Conclusions
 
-_When all the behaviour is implemented, feel free to add some observations or conclusions you like to share in the section_
+### Performance Optimization with React Query: 
+The use of React Query significantly enhances the performance by reducing unnecessary network requests through caching and by canceling outdated requests when the user types quickly.
+### Scalable Architecture: 
+The separation of backend and client allows for easy scaling and maintenance.
+### Robust Search Functionality:
+The autocomplete endpoint is well-optimized to handle large datasets, returning relevant results quickly.
+
+### One Endpoint for Multiple Search Types:
+`/autocomplete`: Provides search functionality to return hotels, cities, and countries based on a query string.
+### React Router:
+Manages navigation with dynamic routes, such as viewing hotel details.
+
+### Future Improvements
+Enhanced Error Handling: Implement more robust error handling, especially around database operations and network requests, to ensure the application can gracefully recover from failures.
+
+Pagination and Infinite Scrolling: Introduce pagination or infinite scrolling for large datasets to improve performance and user experience during searches.
+
+User Authentication: Add user authentication to manage access to certain routes and to provide personalized experiences, such as saving favorite hotels.
+
+Testing: Integrate unit and integration testing for both the frontend and backend to ensure stability and reliability as the application grows.
 
 ### Database structure
 

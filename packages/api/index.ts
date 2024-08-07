@@ -19,21 +19,6 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 
-app.get('/hotels', async (req, res) => {
-  const mongoClient = new MongoClient(DATABASE_URL);
-  console.log('Connecting to MongoDB...');
-
-  try {
-    await mongoClient.connect();
-    console.log('Successfully connected to MongoDB!');
-    const db = mongoClient.db()
-    const collection = db.collection('hotels');
-    res.send(await collection.find().toArray())
-  } finally {
-    await mongoClient.close();
-  }
-})
-
 app.get('/autocomplete', async (req, res) => {
   const mongoClient = new MongoClient(DATABASE_URL);
   console.log('Connecting to MongoDB...');
