@@ -20,7 +20,6 @@ function Home() {
     queryKey: ['autocomplete', query],
     queryFn: () => fetchResults(query),
     enabled: query.length > 0,
-    keepPreviousData: true,
   });
 
   const fetchData = (event: ChangeEvent<HTMLInputElement>) => {
